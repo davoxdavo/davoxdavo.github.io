@@ -33,21 +33,12 @@
             align-items: center;
             gap: 16px;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
         .app-head h2 { margin: 0; }
-        .store-link {
-            display: inline-block;
-            background: #000;
-            color: #fff;
-            padding: 9px 18px;
-            border-radius: 8px;
-            font-size: 15px;
-            font-weight: 500;
-        }
-        .store-link:hover {
-            background: #333;
-            text-decoration: none;
-        }
+        .store-badge { height: 40px; width: auto; display: block; }
+        .store-badge-link { display: inline-block; line-height: 0; }
+        .store-badge-link:hover { opacity: 0.82; }
         .app-icon {
             width: 72px;
             height: 72px;
@@ -64,11 +55,23 @@
         <div class="app-head">
             <img class="app-icon" src="icons/lull-fan.png" alt="Lull Fan app icon" width="72" height="72">
             <h2>Lull Fan</h2>
+            <a class="store-badge-link" href="https://apps.apple.com/us/app/lull-fan/id6798875798">
+                <svg class="store-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 119.66 40" role="img" aria-label="Download Lull Fan on the App Store">
+                    <linearGradient id="lfBorder" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#d6d6d6"/>
+                        <stop offset="1" stop-color="#7a7a7a"/>
+                    </linearGradient>
+                    <rect x="0.5" y="0.5" width="118.66" height="39" rx="8.5" fill="#000" stroke="url(#lfBorder)"/>
+                    <path d="M24.769,20.3a4.949,4.949,0,0,1,2.357-4.152,5.066,5.066,0,0,0-3.99-2.158c-1.68-.176-3.309,1.005-4.165,1.005-.872,0-2.19-.987-3.608-.958a5.315,5.315,0,0,0-4.473,2.728c-1.934,3.348-.491,8.269,1.361,10.976.927,1.325,2.01,2.805,3.428,2.753,1.387-.058,1.905-.885,3.579-.885,1.658,0,2.144.885,3.59.852,1.489-.025,2.426-1.332,3.32-2.67a10.962,10.962,0,0,0,1.518-3.092A4.782,4.782,0,0,1,24.769,20.3Z" fill="#fff"/>
+                    <path d="M22.037,12.211a4.872,4.872,0,0,0,1.115-3.491,4.957,4.957,0,0,0-3.208,1.66,4.636,4.636,0,0,0-1.144,3.361A4.1,4.1,0,0,0,22.037,12.211Z" fill="#fff"/>
+                    <text x="38" y="17.5" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" textLength="58" lengthAdjust="spacingAndGlyphs">Download on the</text>
+                    <text x="38" y="32" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="500" textLength="72" lengthAdjust="spacingAndGlyphs">App Store</text>
+                </svg>
+            </a>
         </div>
         <p>A fan-noise sleep aid for iPhone. Every sound is generated live rather than
         looped, so nothing repeats over an eight-hour night, and the speed switch changes
         the character of the sound the way a real fan's pitch changes with its motor.</p>
-        <p><a class="store-link" href="https://apps.apple.com/us/app/lull-fan/id6798875798">Download on the App Store</a></p>
         <ul>
             <li><a href="https://davoxdavo.github.io/weightliftingAssets/Lull%20fan/lull-fan-support.html">Support &amp; FAQ</a></li>
             <li><a href="https://davoxdavo.github.io/weightliftingAssets/Lull%20fan/lull-fan-privacy.html">Privacy Policy</a></li>
@@ -80,13 +83,25 @@
         <div class="app-head">
             <img class="app-icon" src="icons/gym-logbook.png" alt="Gym Logbook Pro app icon" width="72" height="72">
             <h2>Gym Logbook Pro</h2>
+            <a class="store-badge-link" href="https://apps.apple.com/us/app/gym-logbook-pro/id6793684183">
+                <svg class="store-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 119.66 40" role="img" aria-label="Download Gym Logbook Pro on the App Store">
+                    <linearGradient id="glBorder" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#d6d6d6"/>
+                        <stop offset="1" stop-color="#7a7a7a"/>
+                    </linearGradient>
+                    <rect x="0.5" y="0.5" width="118.66" height="39" rx="8.5" fill="#000" stroke="url(#glBorder)"/>
+                    <path d="M24.769,20.3a4.949,4.949,0,0,1,2.357-4.152,5.066,5.066,0,0,0-3.99-2.158c-1.68-.176-3.309,1.005-4.165,1.005-.872,0-2.19-.987-3.608-.958a5.315,5.315,0,0,0-4.473,2.728c-1.934,3.348-.491,8.269,1.361,10.976.927,1.325,2.01,2.805,3.428,2.753,1.387-.058,1.905-.885,3.579-.885,1.658,0,2.144.885,3.59.852,1.489-.025,2.426-1.332,3.32-2.67a10.962,10.962,0,0,0,1.518-3.092A4.782,4.782,0,0,1,24.769,20.3Z" fill="#fff"/>
+                    <path d="M22.037,12.211a4.872,4.872,0,0,0,1.115-3.491,4.957,4.957,0,0,0-3.208,1.66,4.636,4.636,0,0,0-1.144,3.361A4.1,4.1,0,0,0,22.037,12.211Z" fill="#fff"/>
+                    <text x="38" y="17.5" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8.5" textLength="58" lengthAdjust="spacingAndGlyphs">Download on the</text>
+                    <text x="38" y="32" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="500" textLength="72" lengthAdjust="spacingAndGlyphs">App Store</text>
+                </svg>
+            </a>
         </div>
         <p>A weightlifting logbook for iPhone. Everything is written to the device first,
         so a session keeps logging in a basement gym with no signal, and each exercise opens
         with what you actually lifted last time — duplicate the set or apply the previous
         numbers instead of typing them again. Personal records and estimated 1RM update as
         you go.</p>
-        <p><a class="store-link" href="https://apps.apple.com/us/app/gym-logbook-pro/id6793684183">Download on the App Store</a></p>
         <ul>
             <li><a href="https://davoxdavo.github.io/weightliftingAssets/remote/legal/support.html">Support &amp; FAQ</a></li>
             <li><a href="https://davoxdavo.github.io/weightliftingAssets/remote/legal/privacy.html">Privacy Policy</a></li>
