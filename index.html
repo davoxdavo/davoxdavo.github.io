@@ -3,7 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davit Ghushchyan - Apps</title>
+    <title>Gym Logbook — gym workout tracker &amp; training log for iPhone</title>
+    <meta name="description" content="A free, offline-first gym workout tracker and lifting log for iPhone. Log sets in two taps, with 600+ exercises, 21 sports, personal records and estimated 1RM.">
+    <link rel="canonical" href="https://davoxdavo.github.io/">
+    <meta name="author" content="Davit Ghushchyan">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Apps by Davit Ghushchyan">
+    <meta property="og:title" content="Gym Logbook — gym workout tracker &amp; training log for iPhone">
+    <meta property="og:description" content="A free, offline-first gym workout tracker and lifting log for iPhone. Log sets in two taps, with 600+ exercises, 21 sports, personal records and estimated 1RM.">
+    <meta property="og:url" content="https://davoxdavo.github.io/">
+    <meta property="og:image" content="https://davoxdavo.github.io/gym-logbook/1.3/01-cover.jpg">
+    <meta property="og:image:width" content="640">
+    <meta property="og:image:height" content="800">
+    <meta property="og:image:alt" content="Gym Logbook, with the headline Train for your sport and a grid of 21 sport icons">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gym Logbook — gym workout tracker for iPhone">
+    <meta name="twitter:description" content="A free, offline-first gym workout tracker and lifting log for iPhone. Log sets in two taps, with 600+ exercises, 21 sports, personal records and estimated 1RM.">
+    <meta name="twitter:image" content="https://davoxdavo.github.io/gym-logbook/1.3/01-cover.jpg">
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Gym Logbook",
+    "alternateName": "Gym Logbook: Workout Tracker",
+    "applicationCategory": "HealthApplication",
+    "applicationSubCategory": "Workout tracker",
+    "operatingSystem": "iOS 17.0 or later",
+    "softwareVersion": "1.3",
+    "url": "https://davoxdavo.github.io/",
+    "installUrl": "https://apps.apple.com/us/app/gym-logbook-pro/id6793684183",
+    "image": "https://davoxdavo.github.io/gym-logbook/1.3/01-cover.jpg",
+    "description": "A free, offline-first gym workout tracker and lifting log for iPhone. Log sets in two taps, with 600+ exercises, 21 sports, personal records and estimated 1RM.",
+    "inLanguage": [
+        "en",
+        "ru",
+        "hy",
+        "sv",
+        "nb",
+        "nl",
+        "da",
+        "pl",
+        "fr",
+        "ar"
+    ],
+    "author": {
+        "@type": "Person",
+        "name": "Davit Ghushchyan"
+    },
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "featureList": [
+        "Log sets in two taps",
+        "Works offline",
+        "Previous performance on every exercise",
+        "600+ exercises with form guides",
+        "21 sports and six training styles",
+        "Workout templates and supersets",
+        "Rest timer",
+        "Personal records and estimated 1RM",
+        "Muscle balance insights",
+        "Calendar history",
+        "Apple Health export",
+        "Ten languages"
+    ]
+}
+    </script>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -28,6 +98,168 @@
         }
         .contact strong { display: block; margin-bottom: 6px; }
         ul { padding-left: 20px; }
+        .release {
+            background: #fff;
+            border: 1px solid #e6e6e6;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-top: 16px;
+        }
+        .release h3 {
+            margin: 0 0 4px;
+            font-size: 16px;
+            color: #222;
+        }
+        .release .version {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #0066cc;
+            background: #eaf3ff;
+            border-radius: 20px;
+            padding: 3px 10px;
+            margin-bottom: 10px;
+        }
+        .release ul { margin: 10px 0 0; }
+        .release li { margin-bottom: 6px; }
+        .release li strong { color: #222; }
+        .release .note {
+            margin: 12px 0 0;
+            font-size: 13px;
+            color: #777;
+        }
+        .facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 0 0 4px;
+            padding: 0;
+            list-style: none;
+        }
+        .facts li {
+            background: #f2f2f7;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 13px;
+            color: #444;
+            margin: 0;
+        }
+        .facts li strong { color: #111; }
+        /* Swipeable carousel. Without JS it is still a scroll-snap strip you can
+           swipe or scroll; JS only adds the dots and the desktop arrows. */
+        .carousel { margin: 18px 0 0; }
+        .carousel-viewport { position: relative; }
+        .carousel-track {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .carousel-track::-webkit-scrollbar { display: none; }
+        .carousel-track:focus-visible {
+            outline: 2px solid #0066cc;
+            outline-offset: 6px;
+            border-radius: 12px;
+        }
+        .post {
+            flex: 0 0 100%;
+            scroll-snap-align: center;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            margin: 0;
+            min-width: 0;
+        }
+        .post img {
+            width: 176px;
+            height: auto;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: #111;
+        }
+        .post figcaption { min-width: 0; }
+        .post h4 { margin: 0 0 6px; font-size: 15px; color: #222; }
+        .post p { margin: 0; font-size: 14px; line-height: 1.55; color: #444; }
+        .post .tags {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #0066cc;
+            word-spacing: 2px;
+        }
+        .carousel-controls {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 14px;
+        }
+        .carousel.ready .carousel-controls { display: flex; }
+        .carousel-nav {
+            width: 34px;
+            height: 34px;
+            border: 1px solid #e0e0e0;
+            border-radius: 50%;
+            background: #fff;
+            color: #333;
+            font-size: 19px;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 0 2px;
+        }
+        .carousel-nav:hover:not(:disabled) { background: #f2f2f7; }
+        .carousel-nav:disabled { opacity: 0.28; cursor: default; }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 2px;
+        }
+        .carousel-dots button {
+            width: 26px;
+            height: 26px;
+            border: 0;
+            padding: 0;
+            background: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-dots button::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ccc;
+            transition: width 0.2s, background 0.2s;
+        }
+        .carousel-dots button[aria-selected="true"]::before {
+            width: 22px;
+            border-radius: 4px;
+            background: #0066cc;
+        }
+        .swipe-hint {
+            margin: 10px 0 0;
+            font-size: 13px;
+            color: #999;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .post { flex-direction: column; gap: 12px; }
+            .post img { width: 100%; max-width: 300px; align-self: center; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .carousel-track { scroll-behavior: auto; }
+            .carousel-dots button::before { transition: none; }
+        }
         .app-head {
             display: flex;
             align-items: center;
@@ -100,13 +332,13 @@
         </ul>
     </div>
 
-    <div class="section">
+    <div class="section" id="gym-logbook">
         <div class="app-head">
-            <img class="app-icon" src="icons/gym-logbook.png" alt="Gym Logbook Pro app icon" width="72" height="72">
+            <img class="app-icon" src="icons/gym-logbook.png" alt="Gym Logbook app icon" width="72" height="72">
             <div class="app-meta">
-                <h2>Gym Logbook Pro</h2>
+                <h2>Gym Logbook</h2>
                 <a class="store-badge-link" href="https://apps.apple.com/us/app/gym-logbook-pro/id6793684183">
-                    <svg class="store-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 119.66 40" role="img" aria-label="Download Gym Logbook Pro on the App Store">
+                    <svg class="store-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 119.66 40" role="img" aria-label="Download Gym Logbook on the App Store">
                         <linearGradient id="glBorder" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="0" stop-color="#d6d6d6"/>
                             <stop offset="1" stop-color="#7a7a7a"/>
@@ -125,6 +357,105 @@
         with what you actually lifted last time — duplicate the set or apply the previous
         numbers instead of typing them again. Personal records and estimated 1RM update as
         you go.</p>
+        <div class="release">
+            <span class="version">New in 1.3</span>
+            <h3>Train for your sport</h3>
+            <ul class="facts">
+                <li><strong>21</strong> sports</li>
+                <li><strong>600+</strong> exercises</li>
+                <li><strong>7</strong> streak boards</li>
+            </ul>
+            <div class="carousel" id="glCarousel">
+                <div class="carousel-viewport">
+                    <div class="carousel-track" tabindex="0" role="group"
+                         aria-roledescription="carousel"
+                         aria-label="Gym Logbook 1.3, eight slides">
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 1 of 8" data-slide="0">
+                    <img src="gym-logbook/1.3/01-cover.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="The Gym Logbook app icon, a dark logbook with a dumbbell on the cover, above the headline &ldquo;Train for your sport.&rdquo; A grid of 21 sport icons follows, each in its own colour &mdash; a runner, a wrestler, a swimmer, a climber, a boxer and more. Below them: 21 sports, 600+ exercises, 7 streak boards.">
+                    <figcaption>
+                        <h4>Train for your sport</h4>
+                        <p>Pick your sport &mdash; 21 of them, from wrestling and rugby to Hyrox, climbing and Olympic weightlifting &mdash; and the whole exercise library follows you.</p>
+                        <p class="tags">#powerlifting #calisthenics #workouttracker #athletetraining #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 2 of 8" data-slide="1">
+                    <img src="gym-logbook/1.3/02-whats-new.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="A numbered list titled &ldquo;Five things in this update.&rdquo; One, train for your sport: 21 sports and six training styles from one Filter row. Two, 600+ exercises. Three, rate how well the rep went, an optional five-grade rank on 28 skill moves. Four, streak leaderboards. Five, a weekly days goal plus optional reminders.">
+                    <figcaption>
+                        <h4>Five things in this update</h4>
+                        <p>21 sports and six training styles from one Filter row. 600+ exercises. An optional execution rank on 28 skill moves. Seven streak boards. A weekly goal you can actually change.</p>
+                        <p class="tags">#workouttracker #liftinglog #progressiveoverload #fitnessapp #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 3 of 8" data-slide="2">
+                    <img src="gym-logbook/1.3/03-sport-filter.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="A row of eight coloured sport icons above an iPhone showing the app&rsquo;s Filter sheet. A search field sits at the top, Agility is ticked under training styles, and a Team section lists sports with the number of exercises behind each one: Baseball 31, Basketball 29, Football 57, Rugby 64.">
+                    <figcaption>
+                        <h4>One row filters everything</h4>
+                        <p>Pick a training style &mdash; Gym, Calisthenics, Agility, Yoga, CrossFit or Stability &mdash; plus any number of sports. Search, favorites and the category counts all narrow with it. Supersets and templates carry sport tags too.</p>
+                        <p class="tags">#sportspecifictraining #athletetraining #hyrox #workouttracker #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 4 of 8" data-slide="3">
+                    <img src="gym-logbook/1.3/04-exercises.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="Four white line drawings of calisthenics skills, labelled Planche, Front Lever, Muscle-Up and Human Flag. Below them an iPhone shows the exercise picker in card view, filtered to Lats, with illustrated cards for each movement.">
+                    <figcaption>
+                        <h4>Planche, levers, muscle-ups</h4>
+                        <p>The catalog is now 600+ exercises. Skill work sits beside the barbell work &mdash; front lever, human flag, the acrobatic moves &mdash; with agility, yoga and stability, and a form guide on every card.</p>
+                        <p class="tags">#calisthenics #planche #frontlever #muscleup #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 5 of 8" data-slide="4">
+                    <img src="gym-logbook/1.3/05-execution-rank.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="Five coloured chips reading Excellent, Good, Fair, Poor and Missed, running from green through amber to red. Below them an iPhone shows the exercise &ldquo;360&rdquo; with two logged sets: the first graded Fair at 5 reps, the second graded Excellent at 4 reps.">
+                    <figcaption>
+                        <h4>Rate how well the rep went</h4>
+                        <p>On a skill move the rep count tells you nothing about the rep. 28 exercises now take an optional grade &mdash; Excellent, Good, Fair, Poor, Missed &mdash; anchored to gymnastics judging bands. It records form, not effort, and nothing is derived from it: personal records and estimated 1RM are unchanged.</p>
+                        <p class="tags">#calisthenics #gymnastics #skilltraining #handstand #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 6 of 8" data-slide="5">
+                    <img src="gym-logbook/1.3/06-leaderboards.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="Seven leaderboard tiles in blue and teal, numbered 2 through 7 with a combined &ldquo;2 to 7&rdquo; tile at the end, each showing a row of dots for the days of the week. Below them an iPhone shows the Workout tab with a streak card reading &ldquo;1 week, this week 2 of 3 days&rdquo; and a Leaderboard button.">
+                    <figcaption>
+                        <h4>Keep the streak, take the board</h4>
+                        <p>Seven Game Center boards &mdash; one for every weekly commitment from 2 to 7 days, plus a combined board where a tie goes to the higher commitment. Ranked by the longest streak you have ever held, not the one you are on.</p>
+                        <p class="tags">#gymmotivation #consistencyiskey #fitnessgoals #strengthtraining #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 7 of 8" data-slide="6">
+                    <img src="gym-logbook/1.3/07-balanced.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="Three chips reading Gymnastics, Track and Field, and Wrestling, above an iPhone showing the Balanced session sheet. A Sport row reads &ldquo;Add sport, 3 selected&rdquo; with those same three sports listed as removable chips, and a Category row below it has Legs and Core selected.">
+                    <figcaption>
+                        <h4>A session built for your sport</h4>
+                        <p>Not sure what to train? Balanced takes the muscles you have been neglecting, ranks them together with the sports you picked, and hands you one workout you can start now.</p>
+                        <p class="tags">#workoutroutine #trainingplan #progressiveoverload #musclebalance #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 8 of 8" data-slide="7">
+                    <img src="gym-logbook/1.3/08-cta.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="The Gym Logbook app icon above the app name and the line &ldquo;Lifting Log, Fitness Plan and PR.&rdquo; Three figures follow &mdash; 21 sports, 600+ exercises, 7 streak boards &mdash; then &ldquo;Two taps per set. Never loses a session. Works with no signal,&rdquo; and a button reading &ldquo;Free on the App Store.&rdquo;">
+                    <figcaption>
+                        <h4>Two taps per set</h4>
+                        <p>Never loses a session. Works with no signal &mdash; every set is written to the device first, so it keeps logging in a basement gym.</p>
+                        <p class="tags">#workouttracker #fitnessapp #liftinglog #workoutlog #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-nav prev" type="button" aria-label="Previous slide">&lsaquo;</button>
+                    <div class="carousel-dots" role="tablist" aria-label="Choose a slide"></div>
+                    <button class="carousel-nav next" type="button" aria-label="Next slide">&rsaquo;</button>
+                </div>
+                <p class="swipe-hint">Swipe, or use the arrow keys</p>
+            </div>
+            <p class="note">Exercise illustrations are AI-generated and are there to help you
+            recognise a movement &mdash; read the written instructions and safety notes, and ask
+            a coach if something looks wrong.</p>
+        </div>
+
         <ul>
             <li><a href="https://davoxdavo.github.io/weightliftingAssets/remote/legal/support.html">Support &amp; FAQ</a></li>
             <li><a href="https://davoxdavo.github.io/weightliftingAssets/remote/legal/privacy.html">Privacy Policy</a></li>
@@ -136,5 +467,71 @@
         <strong>Contact</strong>
         <p>Email <strong>davit.ghushchyan@gmail.com</strong> for support, questions, or press.</p>
     </div>
+
+<script>
+(function () {
+    var root = document.getElementById('glCarousel');
+    if (!root) return;
+    var track = root.querySelector('.carousel-track');
+    var slides = Array.prototype.slice.call(track.querySelectorAll('.post'));
+    var dots = root.querySelector('.carousel-dots');
+    var prev = root.querySelector('.carousel-nav.prev');
+    var next = root.querySelector('.carousel-nav.next');
+    if (!track || !slides.length) return;
+
+    var current = 0;
+
+    slides.forEach(function (slide, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        dot.addEventListener('click', function () { go(i); });
+        dots.appendChild(dot);
+    });
+
+    function go(i) {
+        var slide = slides[Math.max(0, Math.min(i, slides.length - 1))];
+        track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+    }
+
+    function sync() {
+        // nearest slide to the track's left edge wins
+        var best = 0, bestGap = Infinity;
+        var origin = track.scrollLeft + track.offsetLeft;
+        slides.forEach(function (slide, i) {
+            var gap = Math.abs(slide.offsetLeft - origin);
+            if (gap < bestGap) { bestGap = gap; best = i; }
+        });
+        if (best !== current) {
+            current = best;
+            for (var i = 0; i < dots.children.length; i++) {
+                dots.children[i].setAttribute('aria-selected', i === best ? 'true' : 'false');
+            }
+        }
+        prev.disabled = track.scrollLeft <= 1;
+        next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+    }
+
+    prev.addEventListener('click', function () { go(current - 1); });
+    next.addEventListener('click', function () { go(current + 1); });
+
+    track.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { e.preventDefault(); go(current + 1); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); go(current - 1); }
+    });
+
+    var pending;
+    track.addEventListener('scroll', function () {
+        window.cancelAnimationFrame(pending);
+        pending = window.requestAnimationFrame(sync);
+    }, { passive: true });
+    window.addEventListener('resize', sync);
+
+    root.classList.add('ready');
+    sync();
+})();
+</script>
 </body>
 </html>
