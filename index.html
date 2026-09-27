@@ -13,15 +13,15 @@
     <meta property="og:title" content="Gym Logbook — gym workout tracker &amp; training log for iPhone">
     <meta property="og:description" content="A free, offline-first gym workout tracker and lifting log for iPhone. Log sets in two taps, with 600+ exercises, 21 sports, personal records and estimated 1RM.">
     <meta property="og:url" content="https://davoxdavo.github.io/">
-    <meta property="og:image" content="https://davoxdavo.github.io/gym-logbook/1.3/01-cover.jpg">
+    <meta property="og:image" content="https://davoxdavo.github.io/gym-logbook/1.4/01-cover.jpg">
     <meta property="og:image:width" content="640">
     <meta property="og:image:height" content="800">
-    <meta property="og:image:alt" content="Gym Logbook, with the headline Train for your sport and a grid of 21 sport icons">
+    <meta property="og:image:alt" content="Gym Logbook, with the headline Log from your wrist, an iPhone on the Workout screen and an Apple Watch logging a bench press set">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Gym Logbook — gym workout tracker for iPhone">
     <meta name="twitter:description" content="A free, offline-first gym workout tracker and lifting log for iPhone. Log sets in two taps, with 600+ exercises, 21 sports, personal records and estimated 1RM.">
-    <meta name="twitter:image" content="https://davoxdavo.github.io/gym-logbook/1.3/01-cover.jpg">
+    <meta name="twitter:image" content="https://davoxdavo.github.io/gym-logbook/1.4/01-cover.jpg">
 
     <script type="application/ld+json">
 {
@@ -32,10 +32,10 @@
     "applicationCategory": "HealthApplication",
     "applicationSubCategory": "Workout tracker",
     "operatingSystem": "iOS 17.0 or later",
-    "softwareVersion": "1.3",
+    "softwareVersion": "1.4.1",
     "url": "https://davoxdavo.github.io/",
     "installUrl": "https://apps.apple.com/us/app/gym-logbook-pro/id6793684183",
-    "image": "https://davoxdavo.github.io/gym-logbook/1.3/01-cover.jpg",
+    "image": "https://davoxdavo.github.io/gym-logbook/1.4/01-cover.jpg",
     "description": "A free, offline-first gym workout tracker and lifting log for iPhone. Log sets in two taps, with 600+ exercises, 21 sports, personal records and estimated 1RM.",
     "inLanguage": [
         "en",
@@ -60,6 +60,7 @@
     },
     "featureList": [
         "Log sets in two taps",
+        "Apple Watch logging",
         "Works offline",
         "Previous performance on every exercise",
         "600+ exercises with form guides",
@@ -125,11 +126,47 @@
         .release ul { margin: 10px 0 0; }
         .release li { margin-bottom: 6px; }
         .release li strong { color: #222; }
-        .release .note {
+        .release .note,
+        .releases > .note {
             margin: 12px 0 0;
             font-size: 13px;
             color: #777;
         }
+        /* Release tabs. Without JS the tab row stays hidden and the releases
+           simply stack, newest first, each under its own version badge. */
+        .release[hidden] { display: none; }
+        .release-tabs {
+            display: none;
+            gap: 4px;
+            margin-top: 16px;
+            padding: 4px;
+            background: #ececf0;
+            border-radius: 12px;
+        }
+        .releases.ready .release-tabs { display: inline-flex; }
+        .release-tabs button {
+            border: 0;
+            background: none;
+            border-radius: 9px;
+            padding: 7px 16px;
+            font: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            color: #555;
+            cursor: pointer;
+        }
+        .release-tabs button:hover { color: #222; }
+        .release-tabs button[aria-selected="true"] {
+            background: #fff;
+            color: #0066cc;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+        }
+        .release-tabs button:focus-visible {
+            outline: 2px solid #0066cc;
+            outline-offset: 2px;
+        }
+        .releases.ready .release { margin-top: 10px; }
+        .releases.ready .release .version { display: none; }
         .facts {
             display: flex;
             flex-wrap: wrap;
@@ -357,7 +394,119 @@
         with what you actually lifted last time — duplicate the set or apply the previous
         numbers instead of typing them again. Personal records and estimated 1RM update as
         you go.</p>
-        <div class="release">
+        <div class="releases" id="glReleases">
+        <div class="release-tabs" role="tablist" aria-label="Gym Logbook releases">
+            <button type="button" role="tab" id="glTab14" aria-controls="glPanel14" aria-selected="true">New in 1.4</button>
+            <button type="button" role="tab" id="glTab13" aria-controls="glPanel13" aria-selected="false" tabindex="-1">New in 1.3</button>
+        </div>
+        <div class="release" id="glPanel14" role="tabpanel" aria-labelledby="glTab14">
+            <span class="version">New in 1.4</span>
+            <h3>Log from your wrist</h3>
+            <ul class="facts">
+                <li><strong>Apple Watch</strong> logging</li>
+                <li><strong>600+</strong> exercises</li>
+                <li><strong>21</strong> sports</li>
+            </ul>
+            <div class="carousel" id="glCarousel14">
+                <div class="carousel-viewport">
+                    <div class="carousel-track" tabindex="0" role="group"
+                         aria-roledescription="carousel"
+                         aria-label="Gym Logbook 1.4, nine slides">
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 1 of 9" data-slide="0">
+                    <img src="gym-logbook/1.4/01-cover.jpg" width="640" height="800"
+                         decoding="async" alt="The Gym Logbook app icon above the headline &ldquo;Log from your wrist.&rdquo; An iPhone shows the Workout screen with a 13-week streak and a Start Balanced button; an Apple Watch in front of it shows Bench Press, sets 3 of 4, 90 kg for 5 reps.">
+                    <figcaption>
+                        <h4>Log from your wrist</h4>
+                        <p>Start the workout on iPhone, then log every set on Apple Watch &mdash; weight, reps, Dup, Add Set and Rest, one tap each.</p>
+                        <p class="tags">#applewatch #strengthtraining #workouttracker #liftinglog #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 2 of 9" data-slide="1">
+                    <img src="gym-logbook/1.4/02-whats-new.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="A numbered list titled &ldquo;Six things in this update.&rdquo; One, log from your wrist. Two, live heart rate. Three, an energy estimate. Four, the whole session, summed up. Five, Insights is a coaching hub. Six, records you actually lifted.">
+                    <figcaption>
+                        <h4>Six things in this update</h4>
+                        <p>Apple Watch logging. Live heart rate on both screens. An optional energy estimate. Every session summed up. Insights as a coaching hub. Records you actually lifted.</p>
+                        <p class="tags">#iosapp #liftingapp #gymtracker #gymprogress #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 3 of 9" data-slide="2">
+                    <img src="gym-logbook/1.4/03-watch.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="Five chips reading Dup, Add Set, Rest, Supersets and Form guides, above an iPhone on the Workout screen. An Apple Watch in front of it shows the Bench Press logging screen: sets 3 of 4, last time 92.5 for 5, and wheels set to 90 kg and 5 reps.">
+                    <figcaption>
+                        <h4>Log every set from your wrist</h4>
+                        <p>Every exercise in the session is on your wrist. Dup, Add Set and Rest are one tap away, a superset walks A &rarr; B &rarr; C and then rests, and form guides come along. Your data stays on the phone.</p>
+                        <p class="tags">#applewatchapp #supersets #weightlifting #setsandreps #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 4 of 9" data-slide="3">
+                    <img src="gym-logbook/1.4/04-live-heart-rate.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="Three chips reading Live on both screens, Off by default and Heart rate only. An iPhone shows the heart-rate sheet: 109 bpm, live from Apple Watch, above the line of the session so far with a low of 75 and a peak of 151. An Apple Watch in front of it shows 109 bpm and the same line.">
+                    <figcaption>
+                        <h4>See your heart rate while you lift</h4>
+                        <p>Live from Apple Watch during a workout, on the watch and on the phone. Off until you turn it on, and heart rate is the only thing Gym Logbook ever reads from Health.</p>
+                        <p class="tags">#applewatchfitness #weighttraining #trainingdata #workoutlog #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 5 of 9" data-slide="4">
+                    <img src="gym-logbook/1.4/05-energy.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="Three chips reading Off by default, From height and weight, and Apple Health optional. An iPhone shows a finished workout&rsquo;s share card: Upper Push, 6 exercises, 19 sets, 6.9k kg total volume, 22 minutes, and an energy line reading roughly 150 kcal.">
+                    <figcaption>
+                        <h4>Roughly what a session cost</h4>
+                        <p>An optional estimate in kilocalories, worked out from your height, weight, year of birth and the work you logged. It is an estimate, not a measurement, and it stays off until you set it up.</p>
+                        <p class="tags">#applehealth #workoutstats #strengthtraining #gymsession #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 6 of 9" data-slide="5">
+                    <img src="gym-logbook/1.4/06-summary.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="Four chips reading Average, Low, Peak and Shareable. An iPhone shows a finished session: duration 21 minutes 39 seconds, energy roughly 150 kcal, and a heart-rate line beneath with an average of 110, a low of 75 and a peak of 149 bpm.">
+                    <figcaption>
+                        <h4>Every session, summed up</h4>
+                        <p>Duration, sets, the estimate, and the line of what your heart did through the workout &mdash; with average, low and peak. Share the line as its own card.</p>
+                        <p class="tags">#trainingjournal #workoutsummary #liftheavy #bodybuilding #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 7 of 9" data-slide="6">
+                    <img src="gym-logbook/1.4/07-insights.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="Three chips reading What to train next, Muscle balance and Training rhythm. An iPhone shows Insights for the month: the headline &ldquo;Back and Arms could use more work,&rdquo; 15 workouts and a 13-week streak, and the muscle-balance spider chart.">
+                    <figcaption>
+                        <h4>Know what to train next</h4>
+                        <p>Insights is a coaching hub now: a headline on what to train next, focus areas on lagging muscles, and cards into muscle balance, training rhythm and your top exercises.</p>
+                        <p class="tags">#hypertrophy #progressiveoverload #trainingplan #musclebuilding #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 8 of 9" data-slide="7">
+                    <img src="gym-logbook/1.4/08-records.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="Three chips reading Latest record, Recent PRs and Best lift per group. An iPhone shows the Records tab: 41 records on 41 lifts, 25 this month, Barbell Row at 82.5 kg as the latest record, and a strip of recent records.">
+                    <figcaption>
+                        <h4>Every record is a lift you made</h4>
+                        <p>Records open on your latest record, the recent ones and each muscle group&rsquo;s best lift. Estimated 1RM is reference information now, never a record.</p>
+                        <p class="tags">#personalrecord #prday #powerlifting #strongerthanyesterday #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                <figure class="post" role="group" aria-roledescription="slide" aria-label="Slide 9 of 9" data-slide="8">
+                    <img src="gym-logbook/1.4/09-cta.jpg" width="640" height="800" loading="lazy"
+                         decoding="async" alt="The Gym Logbook app icon above the app name and the line &ldquo;Lifting Log, Fitness Plan and PR.&rdquo; Three chips follow &mdash; Apple Watch logging, 600+ exercises, 21 sports &mdash; then &ldquo;Two taps per set. Never loses a session. Works with no signal,&rdquo; and a button reading &ldquo;Free on the App Store.&rdquo;">
+                    <figcaption>
+                        <h4>Two taps per set</h4>
+                        <p>Still never loses a session, still works with no signal. Free on the App Store for iPhone and Apple Watch.</p>
+                        <p class="tags">#workoutapp #gymapp #fitnessapp #iphoneapp #gymlogbook</p>
+                    </figcaption>
+                </figure>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-nav prev" type="button" aria-label="Previous slide">&lsaquo;</button>
+                    <div class="carousel-dots" role="tablist" aria-label="Choose a slide"></div>
+                    <button class="carousel-nav next" type="button" aria-label="Next slide">&rsaquo;</button>
+                </div>
+                <p class="swipe-hint">Swipe, or use the arrow keys</p>
+            </div>
+            <p class="note">Live heart rate and the energy estimate are off until you turn
+            them on. The energy figure is an estimate, not a measurement, and nothing in the
+            app is medical advice.</p>
+        </div>
+        <div class="release" id="glPanel13" role="tabpanel" aria-labelledby="glTab13">
             <span class="version">New in 1.3</span>
             <h3>Train for your sport</h3>
             <ul class="facts">
@@ -365,7 +514,7 @@
                 <li><strong>600+</strong> exercises</li>
                 <li><strong>7</strong> streak boards</li>
             </ul>
-            <div class="carousel" id="glCarousel">
+            <div class="carousel" id="glCarousel13">
                 <div class="carousel-viewport">
                     <div class="carousel-track" tabindex="0" role="group"
                          aria-roledescription="carousel"
@@ -451,9 +600,10 @@
                 </div>
                 <p class="swipe-hint">Swipe, or use the arrow keys</p>
             </div>
-            <p class="note">Exercise illustrations are AI-generated and are there to help you
-            recognise a movement &mdash; read the written instructions and safety notes, and ask
-            a coach if something looks wrong.</p>
+        </div>
+        <p class="note">Exercise illustrations are AI-generated and are there to help you
+        recognise a movement &mdash; read the written instructions and safety notes, and ask
+        a coach if something looks wrong.</p>
         </div>
 
         <ul>
@@ -469,9 +619,7 @@
     </div>
 
 <script>
-(function () {
-    var root = document.getElementById('glCarousel');
-    if (!root) return;
+Array.prototype.forEach.call(document.querySelectorAll('.carousel'), function (root) {
     var track = root.querySelector('.carousel-track');
     var slides = Array.prototype.slice.call(track.querySelectorAll('.post'));
     var dots = root.querySelector('.carousel-dots');
@@ -531,6 +679,38 @@
 
     root.classList.add('ready');
     sync();
+});
+
+(function () {
+    var root = document.getElementById('glReleases');
+    if (!root) return;
+    var tabs = Array.prototype.slice.call(root.querySelectorAll('.release-tabs [role="tab"]'));
+    if (!tabs.length) return;
+
+    function select(tab, focus) {
+        tabs.forEach(function (t) {
+            var on = t === tab;
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+            t.tabIndex = on ? 0 : -1;
+            document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+        });
+        if (focus) tab.focus();
+        // a carousel measured while its panel was hidden has no width
+        window.dispatchEvent(new Event('resize'));
+    }
+
+    tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () { select(tab, false); });
+        tab.addEventListener('keydown', function (e) {
+            var step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+            if (!step) return;
+            e.preventDefault();
+            select(tabs[(i + step + tabs.length) % tabs.length], true);
+        });
+    });
+
+    root.classList.add('ready');
+    select(tabs[0], false);
 })();
 </script>
 </body>
