@@ -1,0 +1,257 @@
+:root {
+  --bg: #0b0806;
+  --panel: #1d1410;
+  --gold: #c9a65a;
+  --gold-bright: #e2c47e;
+  --ink: #efe5d3;
+  --muted: #a8977f;
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  min-height: 100dvh;
+  padding-bottom: calc(84px + env(safe-area-inset-bottom));
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+}
+
+/* ---------- Page frame ---------- */
+.frame {
+  position: relative;
+  margin: 0 auto;
+  background: #0f0b09;
+}
+.frame--desktop {
+  width: min(100%, 1440px);
+}
+.frame--mobile {
+  width: 100%;
+}
+/* Phone view on a large screen: a phone-width column with a soft frame. */
+@media (min-width: 560px) {
+  .frame--mobile {
+    width: 390px;
+    margin-top: 28px;
+    border-radius: 28px;
+    overflow: clip;
+    box-shadow:
+      0 0 0 10px #17110d,
+      0 0 0 11px rgba(201, 166, 90, 0.35),
+      0 40px 80px -20px rgba(0, 0, 0, 0.9);
+  }
+}
+.hdr {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.page-body {
+  position: relative;
+}
+.layer {
+  position: absolute;
+  inset: 0;
+}
+
+/* ---------- Click areas ---------- */
+.hs {
+  position: absolute;
+  display: block;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  outline-offset: 2px;
+  transition: box-shadow 0.15s ease, background-color 0.15s ease;
+}
+@media (hover: hover) {
+  .hs:hover {
+    box-shadow: inset 0 0 0 2px rgba(226, 196, 126, 0.55);
+    background: rgba(226, 196, 126, 0.06);
+  }
+}
+.hs:focus-visible {
+  outline: 2px solid var(--gold-bright);
+}
+/* Tap outside any link: briefly show where the clickable areas are. */
+.hint .hs {
+  box-shadow: inset 0 0 0 2px rgba(226, 196, 126, 0.75);
+  background: rgba(226, 196, 126, 0.12);
+}
+
+/* Pre-captured states (taste chart thirds) */
+.state {
+  position: absolute;
+}
+.state img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+}
+
+/* ---------- Overlays ---------- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.overlay__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 4, 3, 0.62);
+  border: 0;
+  padding: 0;
+  cursor: default;
+}
+.drawer {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  pointer-events: none;
+}
+@media (min-width: 560px) {
+  .drawer {
+    width: 390px;
+    margin-top: 28px;
+  }
+}
+.drawer__panel {
+  position: absolute;
+  top: 0;
+  min-height: 100dvh;
+  background: linear-gradient(180deg, #2a1c15, #1d1410 60%);
+  pointer-events: auto;
+  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.6);
+}
+.langmenu {
+  position: absolute;
+  z-index: 30;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.85);
+}
+
+/* Age gate */
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+}
+.gate__box {
+  position: relative;
+  width: min(100vw, 100dvh * var(--ar));
+  aspect-ratio: var(--ar);
+}
+@media (min-width: 560px) {
+  .gate--mobile .gate__box {
+    width: min(390px, 100dvh * var(--ar));
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 0 0 10px #17110d, 0 0 0 11px rgba(201, 166, 90, 0.35);
+  }
+}
+
+/* ---------- Phone / Desktop switch ---------- */
+.switch {
+  position: fixed;
+  left: 50%;
+  bottom: calc(14px + env(safe-area-inset-bottom));
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  border: 1px solid rgba(201, 166, 90, 0.4);
+  background: rgba(23, 17, 13, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.9);
+}
+.switch__tag {
+  padding: 0 10px 0 12px;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.switch__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.switch__btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+.switch__btn[aria-pressed="true"] {
+  background: var(--gold);
+  color: #1d1410;
+}
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(76px + env(safe-area-inset-bottom));
+  z-index: 80;
+  width: max-content;
+  max-width: min(92vw, 440px);
+  padding: 12px 16px;
+  transform: translateX(-50%);
+  border-radius: 12px;
+  border: 1px solid rgba(201, 166, 90, 0.4);
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.9);
+}
+.toast[hidden] {
+  display: none;
+}
+
+.loading,
+.noscript {
+  padding: 40vh 20px 0;
+  color: var(--muted);
+  text-align: center;
+}

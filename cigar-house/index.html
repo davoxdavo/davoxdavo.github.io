@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="theme-color" content="#120d0a" />
+    <title>Cigar House Armenia · Demo</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23120d0a' stroke='%23c9a65a' stroke-width='3'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia,serif' font-size='24' fill='%23c9a65a'%3ECH%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app" class="app" aria-live="polite"></div>
+
+    <div class="switch" role="group" aria-label="Preview size">
+      <span class="switch__tag">Demo</span>
+      <button type="button" class="switch__btn" data-view="mobile" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2" /><path d="M10.5 18.5h3" /></svg>
+        Phone
+      </button>
+      <button type="button" class="switch__btn" data-view="desktop" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="1.6" /><path d="M8.5 20h7M12 16.5V20" /></svg>
+        Desktop
+      </button>
+    </div>
+
+    <div id="toast" class="toast" role="status" hidden></div>
+    <noscript><p class="noscript">This demo needs JavaScript.</p></noscript>
+    <script src="app.js" defer></script>
+  </body>
+</html>
