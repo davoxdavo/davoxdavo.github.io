@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kargin Keyboard key invitation</title>
+<style>
+  :root { color-scheme: light dark; --accent: #0a84ff; --bg: #f2f2f7; --card: #fff; --text: #111; --muted: #6e6e73; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #000; --card: #1c1c1e; --text: #f2f2f7; --muted: #98989d; } }
+  body { margin: 0; font-family: -apple-system, system-ui, sans-serif; background: var(--bg); color: var(--text); }
+  main { max-width: 420px; margin: 0 auto; padding: 32px 16px; }
+  .card { background: var(--card); border-radius: 16px; padding: 20px; margin-bottom: 16px; }
+  h1 { font-size: 22px; margin: 0 0 8px; }
+  p { margin: 8px 0; line-height: 1.4; }
+  .muted { color: var(--muted); font-size: 14px; }
+  .code { font-size: 28px; font-weight: 600; letter-spacing: 2px; text-align: center; padding: 12px 0; font-variant-numeric: tabular-nums; }
+  a.button, button { display: block; width: 100%; box-sizing: border-box; text-align: center; padding: 14px; border-radius: 12px;
+    background: var(--accent); color: #fff; font-size: 17px; font-weight: 600; text-decoration: none; border: 0; margin-top: 12px; }
+  button.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+  ol { padding-left: 20px; } li { margin: 6px 0; }
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <h1>🔐 A private key for your chat</h1>
+    <p>Someone wants to write with you privately using <strong>Kargin Keyboard</strong>. Only your two phones will hold the key; it is never stored anywhere else.</p>
+    <div class="code" id="code">KK-····-····</div>
+    <a class="button" id="open" href="#">Open in Kargin Keyboard</a>
+    <button class="secondary" id="copy">Copy the code</button>
+  </div>
+  <div class="card">
+    <p class="muted">Don't have the keyboard yet?</p>
+    <ol class="muted">
+      <li><a id="store" href="https://apps.apple.com/app/kargin-keyboard/id6815594288">Install Kargin Keyboard</a> from the App Store.</li>
+      <li>Come back to this page and tap <em>Open in Kargin Keyboard</em>, or copy the code and paste it under Enigma › Receive a Key.</li>
+    </ol>
+    <p class="muted">The invitation works for 24 hours.</p>
+  </div>
+</main>
+<script>
+  const match = (new URLSearchParams(location.search).get("c") || location.pathname).match(/KK-?([A-HJ-NP-Z2-9]{4})-?([A-HJ-NP-Z2-9]{4})/i);
+  const code = match ? ("KK-" + match[1] + "-" + match[2]).toUpperCase() : null;
+  const codeEl = document.getElementById("code");
+  const open = document.getElementById("open");
+  if (code) {
+    codeEl.textContent = code;
+    open.href = "karginkeyboard://enigma?code=" + code;
+  } else {
+    codeEl.textContent = "No code in this link";
+    open.style.display = "none";
+  }
+  document.getElementById("copy").onclick = async () => {
+    if (!code) return;
+    try { await navigator.clipboard.writeText(code); document.getElementById("copy").textContent = "Copied"; } catch (e) {}
+  };
+</script>
+</body>
+</html>

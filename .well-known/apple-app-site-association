@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["T2LK62D5N4.davit.ghushchyan.ArmenianKeyboard"],
+        "components": [
+          { "/": "/k/*", "comment": "Enigma key invitation (ADR 0032)" },
+          { "/": "/kargin-keyboard/k/*", "comment": "Same page on davoxdavo.github.io" }
+        ]
+      }
+    ]
+  }
+}
