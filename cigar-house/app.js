@@ -35,6 +35,10 @@
   }
 
   /* ---------- Helpers ---------- */
+  /** Image URL tagged with the build time, so a republished demo never shows cached pictures. */
+  function asset(src) {
+    return src + "?v=" + encodeURIComponent(data.generatedAt);
+  }
   function el(tag, cls, attrs) {
     var n = document.createElement(tag);
     if (cls) n.className = cls;
@@ -124,7 +128,7 @@
 
     // Sticky header (its own picture + click areas).
     var hdr = el("div", "hdr");
-    var himg = el("img", "", { src: page.header.src, alt: "", width: W, height: page.header.h, draggable: "false" });
+    var himg = el("img", "", { src: asset(page.header.src), alt: "", width: W, height: page.header.h, draggable: "false" });
     hdr.appendChild(himg);
     var hlayer = el("div", "layer");
     page.headerAreas.forEach(function (a) {
@@ -135,7 +139,7 @@
       var lm = locData.langMenu;
       var menu = el("div", "langmenu");
       place(menu, lm, W, page.header.h);
-      menu.appendChild(el("img", "", { src: lm.src, alt: "", width: lm.w, height: lm.h, draggable: "false" }));
+      menu.appendChild(el("img", "", { src: asset(lm.src), alt: "", width: lm.w, height: lm.h, draggable: "false" }));
       var mlayer = el("div", "layer");
       lm.areas.forEach(function (a) {
         mlayer.appendChild(hotspot(a, lm.w, lm.h, route));
@@ -151,7 +155,7 @@
     page.slices.forEach(function (s, i) {
       body.appendChild(
         el("img", "", {
-          src: s.src,
+          src: asset(s.src),
           alt: i === 0 ? page.title : "",
           width: W,
           height: s.h,
@@ -168,18 +172,18 @@
     (page.states || []).forEach(function (st) {
       var box = el("div", "state");
       place(box, st, W, page.height);
-      var img = el("img", "", { src: st.images[0], alt: "", draggable: "false" });
+      var img = el("img", "", { src: asset(st.images[0]), alt: "", draggable: "false" });
       box.appendChild(img);
       layer.appendChild(box);
       st.images.slice(1).forEach(function (src) {
-        new Image().src = src;
+        new Image().src = asset(src);
       });
       st.triggers.forEach(function (t) {
         var b = el("button", "hs", { type: "button" });
         place(b, t, W, page.height);
         b.addEventListener("click", function (e) {
           e.stopPropagation();
-          img.src = st.images[t.state];
+          img.src = asset(st.images[t.state]);
         });
         layer.appendChild(b);
       });
@@ -212,7 +216,7 @@
     var panel = el("div", "drawer__panel");
     panel.style.left = pct(d.x, W);
     panel.style.width = pct(d.w, W);
-    panel.appendChild(el("img", "", { src: d.src, alt: "", width: d.w, height: d.h, draggable: "false" }));
+    panel.appendChild(el("img", "", { src: asset(d.src), alt: "", width: d.w, height: d.h, draggable: "false" }));
     var layer = el("div", "layer");
     d.areas.forEach(function (a) {
       layer.appendChild(hotspot(a, d.w, d.h, route));
@@ -243,7 +247,7 @@
     var wrap = el("div", "gate gate--" + view);
     var box = el("div", "gate__box");
     box.style.setProperty("--ar", g.w + " / " + g.h);
-    box.appendChild(el("img", "", { src: g.src, alt: "Age check", width: g.w, height: g.h, draggable: "false" }));
+    box.appendChild(el("img", "", { src: asset(g.src), alt: "Age check", width: g.w, height: g.h, draggable: "false" }));
     var layer = el("div", "layer");
     g.areas.forEach(function (a) {
       layer.appendChild(hotspot(a, g.w, g.h, { loc: "en" }));
