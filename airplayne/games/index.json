@@ -1,0 +1,143 @@
+{
+  "format" : 1,
+  "games" : [
+    {
+      "bytes" : 21247,
+      "category" : "board",
+      "coop" : false,
+      "file" : "mancala-1.airgame",
+      "guide" : [
+        {
+          "en" : "Finish with more stones in your store than your friend.",
+          "hy" : "Խաղի վերջում քո գանձարանում ավելի շատ քար ունեցիր, քան ընկերդ։",
+          "kind" : "goal"
+        },
+        {
+          "en" : "Six pits with four stones each on your side, the same on your friend's side, and a big store at each end. Your store is the one next to your pits, lit in your colour.",
+          "hy" : "Քո կողմում վեց փոսիկ՝ յուրաքանչյուրում չորս քար, նույնը ընկերոջդ կողմում, և մեծ գանձարան յուրաքանչյուր ծայրում։ Քո գանձարանը քո փոսիկների կողքինն է՝ քո գույնով։",
+          "kind" : "see"
+        },
+        {
+          "en" : "Tap one of your pits. Its stones are dropped one by one into the next pits, into your store, then on into your friend's pits. Your friend's store is skipped.",
+          "hy" : "Սեղմիր քո փոսիկներից մեկը։ Քարերը մեկ առ մեկ ընկնում են հաջորդ փոսիկները, քո գանձարանը, ապա ընկերոջդ փոսիկները։ Ընկերոջդ գանձարանը բաց է թողնվում։",
+          "kind" : "turn"
+        },
+        {
+          "en" : "Last stone in your store? Move again. Last stone in an empty pit on your side? It and all the stones in the pit opposite go into your store.",
+          "hy" : "Վերջին քարն ընկավ քո գանձարանը՞։ Խաղա նորից։ Քո կողմի դատարկ փոսիկո՞ւմ։ Այն և դիմացի փոսիկի բոլոր քարերը գնում են քո գանձարանը։",
+          "kind" : "turn"
+        },
+        {
+          "en" : "When either side is empty, the other player sweeps their remaining stones into their store. Most stones wins; 24 each is a draw.",
+          "hy" : "Երբ որևէ կողմը դատարկվում է, մյուս խաղացողն իր մնացած քարերը տանում է իր գանձարանը։ Ով շատ քար ունի՝ հաղթում է, 24-24-ը ոչ-ոքի է։",
+          "kind" : "win"
+        },
+        {
+          "en" : "Count before you tap: a pit with exactly the right number of stones to end in your store gives you a free extra move.",
+          "hy" : "Սեղմելուց առաջ հաշվիր. փոսիկը, որի քարերը ճիշտ քո գանձարանում են ավարտվում, քեզ լրացուցիչ քայլ է տալիս։",
+          "kind" : "tip"
+        }
+      ],
+      "icon" : "🪨",
+      "id" : "mancala",
+      "minBuild" : 6,
+      "players" : {
+        "max" : 2,
+        "min" : 2
+      },
+      "rules" : {
+        "en" : "Scoop up all the stones in one of your pits and drop them one by one into the next pits, counter-clockwise, including your own store but skipping your friend's. Land in your store to move again; land in an empty pit on your side to capture the stones opposite. When one side runs out, the other player keeps what is left. Most stones wins.",
+        "hy" : "Վերցրու քո փոսիկներից մեկի բոլոր քարերը և մեկ-մեկ գցիր հաջորդ փոսիկների մեջ՝ ժամացույցի սլաքին հակառակ, ներառյալ քո գանձարանը, բայց բաց թողնելով ընկերոջդ գանձարանը։ Վերջին քարը գանձարանում՝ նորից քո հերթն է, քո կողմի դատարկ փոսիկում՝ վերցնում ես դիմացի քարերը։ Երբ մի կողմը դատարկվում է, մյուսը պահում է մնացածը։ Ով շատ քար ունի՝ հաղթում է։",
+        "ru" : "Возьми все камни из одной своей лунки и раскладывай их по одному против часовой стрелки, включая свой амбар, но пропуская амбар друга. Последний камень в амбаре — ходи снова; в пустой лунке на своей стороне — забери камни напротив. Когда одна сторона опустела, второй игрок оставляет себе остаток. Больше камней — победа."
+      },
+      "sha256" : "d1ba60f9eb060c3dc96fa69fc7e7df84e01f076524ded35347d12719922dd6dd",
+      "solo" : true,
+      "theme" : [
+        "#8B5A2B",
+        "#2A7F62",
+        "#E9B949",
+        "#F6EBD9",
+        "#2A1D10"
+      ],
+      "title" : {
+        "ar" : "منقلة",
+        "de" : "Mancala",
+        "en" : "Mancala",
+        "es" : "Mancala",
+        "fr" : "Mancala",
+        "hy" : "Մանկալա",
+        "ru" : "Манкала"
+      },
+      "version" : 1
+    },
+    {
+      "bytes" : 20906,
+      "category" : "board",
+      "coop" : false,
+      "file" : "ultimate-ttt-1.airgame",
+      "guide" : [
+        {
+          "en" : "Win three small boards in a row: across, down or diagonally.",
+          "hy" : "Շահիր երեք փոքր դաշտ անընդմեջ՝ հորիզոնական, ուղղահայաց կամ անկյունագծով։",
+          "kind" : "goal"
+        },
+        {
+          "en" : "A 3×3 grid of small tic-tac-toe boards. You are ✕ if you started, otherwise ◯. The board you must play in glows; small boards already won show a big ✕ or ◯.",
+          "hy" : "3×3 ցանց՝ փոքր խաչ-զրո դաշտերով։ Սկսողը ✕ է, մյուսը՝ ◯։ Դաշտը, որտեղ պետք է խաղաս, լուսավորված է, իսկ շահված դաշտերը մեծ ✕ կամ ◯ են ցույց տալիս։",
+          "kind" : "see"
+        },
+        {
+          "en" : "Tap an empty cell in the glowing board. Its position sends your friend to the matching small board: play top-left, and they must play in the top-left board.",
+          "hy" : "Սեղմիր լուսավոր դաշտի ազատ վանդակը։ Դրա դիրքն ընկերոջդ ուղարկում է համապատասխան դաշտ. խաղա վերևի ձախ վանդակում, և նա պետք է խաղա վերևի ձախ դաշտում։",
+          "kind" : "turn"
+        },
+        {
+          "en" : "Sent to a board that is already won or full? Then you may play in any open cell of any unfinished board.",
+          "hy" : "Քեզ ուղարկեցին արդեն շահված կամ լցված դաշտ։ Այդ դեպքում խաղա ցանկացած անավարտ դաշտի ցանկացած ազատ վանդակում։",
+          "kind" : "turn"
+        },
+        {
+          "en" : "Three in a row wins a small board. Three small boards in a row win the game. If all nine boards are finished with no line, it's a draw.",
+          "hy" : "Երեքն անընդմեջ՝ փոքր դաշտը քոնն է։ Երեք դաշտ անընդմեջ՝ հաղթանակ։ Եթե բոլոր ինը դաշտներն ավարտվել են առանց շարքի՝ ոչ-ոքի է։",
+          "kind" : "win"
+        },
+        {
+          "en" : "Think about where you are sending your friend, not only about the cell you take. Sending them to a finished board gives them a free move anywhere.",
+          "hy" : "Մտածիր, թե ուր ես ուղարկում ընկերոջդ, ոչ միայն թե որ վանդակն ես վերցնում։ Ավարտված դաշտ ուղարկելը նրան ազատ քայլ է տալիս։",
+          "kind" : "tip"
+        }
+      ],
+      "icon" : "#️⃣",
+      "id" : "ultimate-ttt",
+      "minBuild" : 6,
+      "players" : {
+        "max" : 2,
+        "min" : 2
+      },
+      "rules" : {
+        "en" : "Nine small tic-tac-toe boards make one big board. The cell you play sends your friend to the matching small board; if that board is already won or full, they may play anywhere open. Three in a row wins a small board, and three small boards in a row win the game.",
+        "hy" : "Ինը փոքր խաչ-զրո՝ մեկ մեծ դաշտում։ Վանդակը, որտեղ խաղում ես, ընկերոջդ ուղարկում է համապատասխան փոքր դաշտ, իսկ եթե այն արդեն շահված է կամ լցված, նա խաղում է ցանկացած ազատ տեղ։ Երեքը անընդմեջ՝ փոքր դաշտն է քոնը, երեք փոքր դաշտ անընդմեջ՝ հաղթանակ։",
+        "ru" : "Девять маленьких полей крестиков-ноликов на одном большом. Клетка, в которую ты ходишь, отправляет друга в такое же маленькое поле; если оно уже выиграно или заполнено, он ходит куда угодно. Три в ряд — маленькое поле твоё, три поля в ряд — победа."
+      },
+      "sha256" : "97230f82144937d4ee9c934b733a0d7db81ae2bb792048147e0bac70c3351b6b",
+      "solo" : true,
+      "theme" : [
+        "#2F55C9",
+        "#C2412E",
+        "#F2B134",
+        "#F3F5FA",
+        "#0F1626"
+      ],
+      "title" : {
+        "ar" : "إكس أو الكبرى",
+        "de" : "Ultimatives Tic-Tac-Toe",
+        "en" : "Ultimate Tic-Tac-Toe",
+        "es" : "Tres en raya definitivo",
+        "fr" : "Morpion ultime",
+        "hy" : "Մեծ խաչ-զրո",
+        "ru" : "Большие крестики-нолики"
+      },
+      "version" : 1
+    }
+  ]
+}
